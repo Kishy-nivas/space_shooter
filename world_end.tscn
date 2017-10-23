@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://world_end.gd" type="Script" id=1]
+[ext_resource path="res://png/BG.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 430.375, 534.977 )
+
+[node name="world_end" type="Area2D"]
+
+transform/pos = Vector2( 15106.2, 457.55 )
+transform/scale = Vector2( 0.0284744, 0.84823 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1.55277, 0, 0, 1.01825, 1.51562, 1.56714 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 1.51562, 1.56714 )
+transform/scale = Vector2( 1.55277, 1.01825 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="area_enter" from="." to="." method="_on_world_end_area_enter"]
+
+

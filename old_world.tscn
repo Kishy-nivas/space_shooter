@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://helpers/level.tscn" type="PackedScene" id=1]
+
+[node name="old_world" type="Node2D"]
+
+[node name="old_level" parent="." instance=ExtResource( 1 )]
+
+
